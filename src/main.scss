@@ -24,6 +24,7 @@ $blue: #08d9d6;
   }
   a {
     color: inherit;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -32,6 +33,7 @@ body,
 #root {
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 body {
