@@ -34,7 +34,7 @@ export default function Layout() {
         </div>
       </header>
       <Outlet />
-      <footer>created with 🤍	by <span>Anas Asimi</span>.</footer>
+      <footer>Created with 🤍	by <span>Anas Asimi</span>.</footer>
     </>
   )
 };
