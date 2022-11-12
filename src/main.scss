@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+$color-white: #eaeaea;
+$color-black: #252a34;
+$red: #ff2e63;
+$blue: #08d9d6;
+
+// resting element
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+  a {
+    color: inherit;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: sans-serif;
+  font-size: 16px;
+  background-color: $color-white;
+  position: relative;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > main {
+    height: 100%;
+    width: min(calc(100% - 16px), calc(800px + 25%));
+    margin: 0 auto;
+  }
+}
+
+// Header =====================================>
+header {
+  width: 100%;
+  z-index: 1;
+  background-color: $color-black;
+  color: $color-white;
+
+  .header-container {
+    height: 40px;
+    width: min(calc(100% - 16px), calc(800px + 25%));
+    margin: 8px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-brand {
+    font-weight: 500;
+    font-size: x-large;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+
+    span {
+      color: $red;
+      font-weight: 300;
+    }
+  }
+  .header-menuButton {
+    height: 32px;
+    aspect-ratio: 1/1;
+    position: relative;
+    cursor: pointer;
+
+    span{
+      border-radius: 4px;
+      transition: .3s;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background-color: $color-white;
+    }
+    span:nth-child(1){
+      top: 0;        
+    }
+    span:nth-child(2){
+      top: 50%;
+      translate: 0 -50%;
+    }
+    span:nth-child(3){
+      bottom: 0;
+    }
+    &.opened{
+      span:nth-child(1){
+        rotate: (45deg);
+        top: 50%;
+        translate: 0 -50%;          
+      }
+      span:nth-child(2){
+        scale: 0;
+      }
+      span:nth-child(3){
+        rotate: (-45deg);
+        top: 50%;
+        translate: 0 -50%; 
+      }
+    }
+  }
+  .header-menu-list {
+    position: absolute;
+    background-color: $color-black;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(600px,100%);
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    z-index: -1;
+
+    transition: 0.5s;
+    translate: 100% 0%;
+    &.opened {
+      transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      translate: 0% 0%;
+    }
+
+    li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 120px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      transition: 0.8s 0.1s;
+      border: 1px solid $color-white;
+      border-radius: 2px;
+
+      &::before {
+        content: "";
+        height: 100%;
+        width: 0%;
+        position: absolute;
+
+        left: 0%;
+        z-index: -1;
+        transition: 0.2s linear;
+        background-color: $red;
+      }
+      &:hover::before {
+        transition: 0.5s cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Home =====================================>
+#home{
+} 
+
+// bassins =====================================>
+#bassins{
+
+} 
+
+// pompage =====================================>
+#pompage{
+
+} 
+
+// about =====================================>
+#about{
+
+} 
+
+// notFound =====================================>
+#notFound{
+  color: $color-black;
+
+  a{
+    color: $red;
+  }
+} 
+
+// Footer ===================================>
+#root > footer {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  background-color: $color-black;
+  color: $color-white;
+  z-index: 1;
+  span{
+    color: $red;
+  }
+}
