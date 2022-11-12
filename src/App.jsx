@@ -5,9 +5,15 @@ import { Bassins } from "./pages/Bassins";
 import { Pompage } from "./pages/Pompage";
 import { About } from "./pages/About";
 import { Notfound } from "./pages/Notfound";
-
+import { useEffect } from "react";
 
 export default function App() {
+
+  useEffect(() => {
+    let body = document.querySelector('body')
+    body.style.height = window.innerHeight + 'px'
+  })
+
   return (
     <BrowserRouter>
       <Routes>
