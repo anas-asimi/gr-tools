@@ -77,7 +77,7 @@ header {
   }
 
   .header-brand {
-    width: 190px;
+    width: 200px;
     font-weight: 500;
     font-size: x-large;
     letter-spacing: 0.5px;
@@ -203,7 +203,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-right: 190px;
+    margin-right: 200px;
     li {
       a {
         padding: 8px 16px;
@@ -275,9 +275,11 @@ header {
 // bassins =====================================>
 #bassins {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 auto;
 
   .input {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,6 +295,7 @@ header {
       /* form starting stylings ------------------------------- */
       .group {
         position: relative;
+        max-width: 300px;
       }
       input {
         font-size: 18px;
@@ -326,7 +329,7 @@ header {
       input:valid ~ label {
         top: -20px;
         font-size: 14px;
-        color: #5264ae;
+        color: $red;
       }
 
       /* BOTTOM BARS ================================= */
@@ -342,7 +345,7 @@ header {
         width: 0;
         bottom: 1px;
         position: absolute;
-        background: #5264ae;
+        background: $red;
         transition: 0.2s ease all;
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
@@ -409,10 +412,23 @@ header {
     }
   }
   .output {
-    flex: 1;
+    height: min(300px , 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 32px;
+
+      h1{
+        color: $red;
+      }
+    }
   }
 }
 
@@ -462,5 +478,9 @@ header {
 
   #bassins{
     flex-direction: column;
+
+    .output{
+      width: 471px;
+    }
   }
 }
