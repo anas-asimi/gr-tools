@@ -1,16 +1,16 @@
 function volume_totale(longueur, largeur, profondeur, talus) {
-    return (profondeur / 6) *
-        (longueur * largeur +
-            (longueur - 2 * profondeur * talus) * (largeur - 2 * profondeur * talus) +
-            4 * (longueur - profondeur * talus) * (largeur - profondeur * talus));
+    let S1 = longueur * largeur
+    let S2 = (longueur - 2 * profondeur * talus) * (largeur - 2 * profondeur * talus)
+    let volumeTotal = (profondeur / 3) * (S1 + S2 + Math.sqrt(S1 * S2))
+    return volumeTotal;
 }
 
 function volume_utile(longueur, largeur, profondeur, talus) {
     let revanche = 0.5
-    let surface = (longueur * largeur);
-    let surface_miroir = ((longueur - (2 * revanche * talus)) * (largeur - (2 * revanche * talus)))
-    let surface_miroir_moyen = ((longueur - revanche * talus)) * ((largeur - revanche * talus));
-    return volume_totale(longueur, largeur, profondeur, talus) - (revanche / 6) * (surface + surface_miroir + 4 * surface_miroir_moyen)
+    let S1 = longueur * largeur
+    let S2 = (longueur - 2 * revanche * talus) * (largeur - 2 * revanche * talus)
+    let volumeUtile = volume_totale(longueur, largeur, profondeur, talus) - (revanche / 3) * (S1 + S2 + Math.sqrt(S1 * S2))
+    return volumeUtile;
 }
 
 function surface_geomembrane(longueur, largeur, profondeur, talus) {
@@ -31,7 +31,7 @@ function cloture(longueur, largeur) {
     return 2 * longueur + 2 * largeur + 8;
 }
 
-function calculFunction(option , parameters) {
+function calculFunction(option, parameters) {
     switch (option) {
         case 'volumeTotale':
             return volume_totale(parameters.longueur, parameters.largeur, parameters.profondeur, parameters.talus)

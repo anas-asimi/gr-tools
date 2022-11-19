@@ -296,136 +296,137 @@ header {
       .group {
         position: relative;
         max-width: 300px;
-      }
-      input {
-        font-size: 18px;
-        padding: 10px 10px 10px 5px;
-        display: block;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid #757575;
-        background-color: transparent;
-      }
-      input:focus {
-        outline: none;
-      }
 
-      /* LABEL ======================================= */
-      label {
-        color: #999;
-        font-size: 18px;
-        font-weight: normal;
-        position: absolute;
-        pointer-events: none;
-        left: 5px;
-        top: 10px;
-        transition: 0.2s ease all;
-        -moz-transition: 0.2s ease all;
-        -webkit-transition: 0.2s ease all;
-      }
-
-      /* active state */
-      input:focus ~ label,
-      input:valid ~ label {
-        top: -20px;
-        font-size: 14px;
-        color: $red;
-      }
-
-      /* BOTTOM BARS ================================= */
-      .bar {
-        position: relative;
-        display: block;
-        width: 100%;
-      }
-      .bar:before,
-      .bar:after {
-        content: "";
-        height: 2px;
-        width: 0;
-        bottom: 1px;
-        position: absolute;
-        background: $red;
-        transition: 0.2s ease all;
-        -moz-transition: 0.2s ease all;
-        -webkit-transition: 0.2s ease all;
-      }
-      .bar:before {
-        left: 50%;
-      }
-      .bar:after {
-        right: 50%;
-      }
-
-      /* active state */
-      input:focus ~ .bar:before,
-      input:focus ~ .bar:after {
-        width: 50%;
-      }
-
-      /* HIGHLIGHTER ================================== */
-      .highlight {
-        position: absolute;
-        height: 60%;
-        width: 100px;
-        top: 25%;
-        left: 0;
-        pointer-events: none;
-        opacity: 0.5;
-      }
-
-      /* active state */
-      input:focus ~ .highlight {
-        -webkit-animation: inputHighlighter 0.3s ease;
-        -moz-animation: inputHighlighter 0.3s ease;
-        animation: inputHighlighter 0.3s ease;
-      }
-
-      /* ANIMATIONS ================ */
-      @-webkit-keyframes inputHighlighter {
-        from {
-          background: #5264ae;
+        input {
+          font-size: 18px;
+          padding: 10px 10px 10px 5px;
+          display: block;
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid #757575;
+          background-color: transparent;
         }
-        to {
+        input:focus {
+          outline: none;
+        }
+
+        /* LABEL ======================================= */
+        label {
+          color: #999;
+          font-size: 18px;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 5px;
+          top: 10px;
+          transition: 0.2s ease all;
+          -moz-transition: 0.2s ease all;
+          -webkit-transition: 0.2s ease all;
+        }
+
+        /* active state */
+        input:focus ~ label,
+        input:valid ~ label {
+          top: -20px;
+          font-size: 14px;
+          color: $red;
+        }
+
+        /* BOTTOM BARS ================================= */
+        .bar {
+          position: relative;
+          display: block;
+          width: 100%;
+        }
+        .bar:before,
+        .bar:after {
+          content: "";
+          height: 2px;
           width: 0;
-          background: transparent;
+          bottom: 1px;
+          position: absolute;
+          background: $red;
+          transition: 0.2s ease all;
+          -moz-transition: 0.2s ease all;
+          -webkit-transition: 0.2s ease all;
         }
-      }
-      @-moz-keyframes inputHighlighter {
-        from {
-          background: #5264ae;
+        .bar:before {
+          left: 50%;
         }
-        to {
-          width: 0;
-          background: transparent;
+        .bar:after {
+          right: 50%;
         }
-      }
-      @keyframes inputHighlighter {
-        from {
-          background: #5264ae;
+
+        /* active state */
+        input:focus ~ .bar:before,
+        input:focus ~ .bar:after {
+          width: 50%;
         }
-        to {
-          width: 0;
-          background: transparent;
+
+        /* HIGHLIGHTER ================================== */
+        .highlight {
+          position: absolute;
+          height: 60%;
+          width: 100px;
+          top: 25%;
+          left: 0;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+
+        /* active state */
+        input:focus ~ .highlight {
+          -webkit-animation: inputHighlighter 0.3s ease;
+          -moz-animation: inputHighlighter 0.3s ease;
+          animation: inputHighlighter 0.3s ease;
+        }
+
+        /* ANIMATIONS ================ */
+        @-webkit-keyframes inputHighlighter {
+          from {
+            background: #5264ae;
+          }
+          to {
+            width: 0;
+            background: transparent;
+          }
+        }
+        @-moz-keyframes inputHighlighter {
+          from {
+            background: #5264ae;
+          }
+          to {
+            width: 0;
+            background: transparent;
+          }
+        }
+        @keyframes inputHighlighter {
+          from {
+            background: #5264ae;
+          }
+          to {
+            width: 0;
+            background: transparent;
+          }
         }
       }
     }
   }
   .output {
-    height: min(300px , 100%);
+    height: min(300px, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .container{
+    .container {
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       gap: 32px;
 
-      h1{
+      h1 {
         color: $red;
       }
     }
@@ -434,6 +435,136 @@ header {
 
 // pompage =====================================>
 #pompage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  /* form starting stylings ------------------------------- */
+  .group {
+    position: relative;
+    width: min(100% , 300px);
+
+    input {
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #757575;
+      background-color: transparent;
+    }
+    input:focus {
+      outline: none;
+    }
+
+    /* LABEL ======================================= */
+    label {
+      color: #999;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    /* active state */
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -20px;
+      font-size: 14px;
+      color: $red;
+    }
+
+    /* BOTTOM BARS ================================= */
+    .bar {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    .bar:before,
+    .bar:after {
+      content: "";
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: $red;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+    .bar:before {
+      left: 50%;
+    }
+    .bar:after {
+      right: 50%;
+    }
+
+    /* active state */
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+      width: 50%;
+    }
+
+    /* HIGHLIGHTER ================================== */
+    .highlight {
+      position: absolute;
+      height: 60%;
+      width: 100px;
+      top: 25%;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* active state */
+    input:focus ~ .highlight {
+      -webkit-animation: inputHighlighter 0.3s ease;
+      -moz-animation: inputHighlighter 0.3s ease;
+      animation: inputHighlighter 0.3s ease;
+    }
+
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+    @-moz-keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+    @keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+  }
+  .result {
+    padding: 16px;
+    width: min(100% , 300px);
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 255, 0.3);
+  }
 }
 
 // about =====================================>
@@ -476,11 +607,7 @@ header {
     }
   }
 
-  #bassins{
+  #bassins {
     flex-direction: column;
-
-    .output{
-      width: 471px;
-    }
   }
 }

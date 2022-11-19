@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {calculFunction , volume_totale , volume_utile , surface_geomembrane , cloture} from './Functions'
+import { calculFunction, volume_totale, volume_utile, surface_geomembrane, cloture } from './Functions'
 
 export const Bassins = () => {
   const [parameters, setParameters] = useState({
@@ -11,7 +11,7 @@ export const Bassins = () => {
 
   function handleChange(event) {
     const name = event.target.name;
-    const value = event.target.value;
+    const value = event.target.valueAsNumber ;
     setParameters({
       ...parameters,
       [name]: value
@@ -52,21 +52,21 @@ export const Bassins = () => {
       <div className="output">
         <div className="container">
           <h1>Result :</h1>
+          <p>Surface de geomembrane =
+            <span id="geomembrane">
+              {' ' + parseInt(calculFunction('geomembrane', parameters))}
+            </span> m2</p>
           <p>Volume totale =
             <span id="volume-totale">
-              {' ' + parseInt(calculFunction('volumeTotale' , parameters))}
+              {' ' + parseInt(calculFunction('volumeTotale', parameters))}
             </span> m3</p>
           <p>Volume utile =
             <span id="volume-utile">
-              {' ' + parseInt(calculFunction("volumeUtile" , parameters))}
+              {' ' + parseInt(calculFunction("volumeUtile", parameters))}
             </span> m3</p>
-          <p>Surface de geomembrane =
-            <span id="geomembrane">
-              {' ' + parseInt(calculFunction('geomembrane' , parameters))}
-            </span> m2</p>
           <p>Cloture =
             <span id="cloture">
-              {' ' + parseInt(calculFunction('cloture' , parameters))}
+              {' ' + parseInt(calculFunction('cloture', parameters))}
             </span> ml</p>
         </div>
       </div>
