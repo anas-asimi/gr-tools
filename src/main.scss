@@ -259,14 +259,17 @@ header {
       align-items: center;
       justify-content: center;
       transition: 0.5s;
-      border: 1px solid $color-black;
       height: 36px;
       width: 200px;
+
       border-radius: 4px;
+      background-color: $red;
+      color: $color-white;
 
       &:hover {
-        background-color: $red;
-        color: $color-white;
+        border: 1px solid $red;
+        background-color: $color-white;
+        color: $red;
       }
     }
   }
@@ -443,7 +446,7 @@ header {
   /* form starting stylings ------------------------------- */
   .group {
     position: relative;
-    width: min(100% , 300px);
+    width: min(100%, 300px);
 
     input {
       font-size: 18px;
@@ -560,7 +563,7 @@ header {
   }
   .result {
     padding: 16px;
-    width: min(100% , 300px);
+    width: min(100%, 300px);
     text-align: center;
     border-radius: 4px;
     background-color: rgba(0, 0, 255, 0.3);
@@ -569,28 +572,86 @@ header {
 
 // about =====================================>
 #about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container{
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    h2{
+      color: $red;
+    }
+    h1{
+      font-weight: 600;
+    }
+
+    p{
+      text-align: center;
+    }
+
+    .social{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+  
+      a{
+        height: 48px;
+        width: 48px;
+        background-color: $color-black;
+        border-radius: 50%;
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+        &:hover{
+          background-color: $red;
+          scale: 1.1;
+        }
+      }
+    }
+  }
 }
 
 // notFound =====================================>
 #notFound {
-  color: $color-black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .error-image{
+    height: 400px;
+    max-width: 100%;
+  }
 
   a {
-    color: $red;
-  }
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-// Footer ===================================>
-#root > footer {
-  width: 100%;
-  padding: 8px 0;
-  text-align: center;
-  background-color: $color-black;
-  color: $color-white;
-  z-index: 1;
-  letter-spacing: 1px;
-  span {
-    color: $red;
+    transition: 0.5s;
+    margin-top: 16px;
+    height: 36px;
+    width: 200px;
+
+    border-radius: 4px;
+    background-color: $red;
+    color: $color-white;
+
+    &:hover {
+      border: 1px solid $red;
+      background-color: $color-white;
+      color: $red;
+    }
   }
 }
 
