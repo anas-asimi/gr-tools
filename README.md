@@ -1,3 +1,3 @@
 # gr-tools
 Collectio of genie rural tools
-WebSite is live (https://gr-tools.netlify.app/)[here]
+WebSite is live [here](https://gr-tools.netlify.app/)
