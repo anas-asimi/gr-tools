@@ -18,6 +18,7 @@ export default function Layout() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/bassins">Bassins</Link></li>
             <li><Link to="/pompage">Pompage</Link></li>
+            <li><Link to="/drive-me">Drive me</Link></li>
             <li><Link to="/about">About</Link></li>
           </ul>
           <a className="header-menuButton" onClick={menuToggle}>
@@ -29,6 +30,7 @@ export default function Layout() {
             <li><Link onClick={menuToggle} to="/">Home</Link></li>
             <li><Link onClick={menuToggle} to="/bassins">Bassins</Link></li>
             <li><Link onClick={menuToggle} to="/pompage">Pompage</Link></li>
+            <li><Link onClick={menuToggle} to="/drive-me">Drive me</Link></li>
             <li><Link onClick={menuToggle} to="/about">About</Link></li>
           </ul>
         </div>
