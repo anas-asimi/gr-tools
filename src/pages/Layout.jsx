@@ -13,7 +13,7 @@ export default function Layout() {
     <>
       <header>
         <div className="header-container">
-          <Link to="/" className="header-brand">Genie Rural <span>tools</span></Link>
+          <Link to="/" className="header-brand">Genie Rural<span>tools</span></Link>
           <ul className="header-menu-list-desktop">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/bassins">Bassins</Link></li>
