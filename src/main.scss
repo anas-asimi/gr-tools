@@ -577,6 +577,149 @@ header {
   align-items: center;
   justify-content: center;
   gap: 32px;
+  .group {
+    position: relative;
+    width: min(100%, 300px);
+
+    input,
+    select {
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #757575;
+      background-color: transparent;
+      background: transparent;
+    }
+    input:focus {
+      outline: none;
+    }
+
+    /* LABEL ======================================= */
+    label {
+      color: #999;
+      font-size: 18px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+
+    /* active state */
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -20px;
+      font-size: 14px;
+      color: $red;
+    }
+
+    /* BOTTOM BARS ================================= */
+    .bar {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    .bar:before,
+    .bar:after {
+      content: "";
+      height: 2px;
+      width: 0;
+      bottom: 1px;
+      position: absolute;
+      background: $red;
+      transition: 0.2s ease all;
+      -moz-transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+    .bar:before {
+      left: 50%;
+    }
+    .bar:after {
+      right: 50%;
+    }
+
+    /* active state */
+    input:focus ~ .bar:before,
+    input:focus ~ .bar:after {
+      width: 50%;
+    }
+
+    /* HIGHLIGHTER ================================== */
+    .highlight {
+      position: absolute;
+      height: 60%;
+      width: 100px;
+      top: 25%;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* active state */
+    input:focus ~ .highlight {
+      -webkit-animation: inputHighlighter 0.3s ease;
+      -moz-animation: inputHighlighter 0.3s ease;
+      animation: inputHighlighter 0.3s ease;
+    }
+
+    /* ANIMATIONS ================ */
+    @-webkit-keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+    @-moz-keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+    @keyframes inputHighlighter {
+      from {
+        background: #5264ae;
+      }
+      to {
+        width: 0;
+        background: transparent;
+      }
+    }
+  }
+  select {
+    outline: none;
+  }
+  option {
+    background: #eaeaea;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  button {
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #ff2e63;
+    color: #eaeaea;
+    cursor: pointer;
+  }
+
 }
 
 // about =====================================>
@@ -585,7 +728,7 @@ header {
   align-items: center;
   justify-content: center;
 
-  .container{
+  .container {
     width: 260px;
     display: flex;
     flex-direction: column;
@@ -593,24 +736,24 @@ header {
     justify-content: center;
     gap: 16px;
 
-    h2{
+    h2 {
       color: $red;
     }
-    h1{
+    h1 {
       font-weight: 600;
     }
 
-    p{
+    p {
       text-align: center;
     }
 
-    .social{
+    .social {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 16px;
-  
-      a{
+
+      a {
         height: 48px;
         width: 48px;
         background-color: $color-black;
@@ -620,7 +763,7 @@ header {
         align-items: center;
         justify-content: center;
         transition: 0.5s;
-        &:hover{
+        &:hover {
           background-color: $red;
           scale: 1.1;
         }
@@ -637,7 +780,7 @@ header {
   justify-content: center;
   flex-direction: column;
 
-  .error-image{
+  .error-image {
     height: 400px;
     max-width: 100%;
   }
