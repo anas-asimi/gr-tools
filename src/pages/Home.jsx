@@ -10,6 +10,7 @@ export const Home = () => {
         <p>Go and serve yourself:</p>
         <Link to="/bassins" >calculs de stockage d'eau</Link>
         <Link to="/pompage" >calculs de pompage</Link>
+        <Link to="/drive-me" >aller aux coordonnées</Link>
         <Link to="/about" >About me</Link>
       </div>
     </main>
