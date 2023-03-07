@@ -22,10 +22,12 @@ export const DriveMe = () => {
 	function start() {
 		let transform = transformation(zone_indexs[parameters.zone - 1], WGS_index)
 		let {x,y} = transform.forward({x : parameters.x , y : parameters.y})
-		if (isNaN(x) && isNaN(y) ) {
-			const URL = `https://www.google.com/maps/search/${y},+${x}`
-			window.open(URL, '_blank');	
-		}
+		if (isNaN(x) || isNaN(y) ) {
+                    console.log('return values are not numbers')
+		} else {
+                    const URL = `https://www.google.com/maps/search/${y},+${x}`
+		    window.open(URL, '_blank');	
+                }
 	}
 	return (
 		<main id='drive-me'>
