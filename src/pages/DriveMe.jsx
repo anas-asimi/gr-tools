@@ -4,7 +4,7 @@ import { useState } from "react";
 const zone_indexs = ['EPSG:26191', 'EPSG:26192', 'EPSG:26194', 'EPSG:26195']
 const WGS_index = 'EPSG:4326'
 
-export const DriveME = () => {
+export const DriveMe = () => {
 	const [parameters, setParameters] = useState({
 		x: '',
 		y: '',
